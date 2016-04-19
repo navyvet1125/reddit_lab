@@ -7,7 +7,6 @@ var numberOfEntries = 10;
 router.get('/', function(req,res){
 	var message = '';
 	for(var i = 0; i< entries.length; i++){
-		// message += '<img src="' + myImage[i] + '"/><br/><h1>This post has a score of ' + score[i] + ' and ' + numComments[i] +' comments</h1><hr>';
 		message += '<img src="' + entries[i].myImage + '"/><br/><h1>This post has a score of ' + entries[i].score + ' and ' + entries[i].numComments +' comments</h1><hr>';
 	}
 	res.send(message);
