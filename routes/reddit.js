@@ -23,10 +23,14 @@ request('http://reddit.com/r/funny.json', function(err, response, body){
 	var myResult = JSON.parse(body);
 	//drill in to get specific pieces of data
 	for(var i = 0; i<numberOfEntries; i++){
+		//Create a new object to store the data
+		
 		var singleEntry ={};
 		singleEntry.score = myResult.data.children[i].data.score;
 		singleEntry.numComments = myResult.data.children[i].data.num_comments;
 		singleEntry.myImage = myResult.data.children[i].data.thumbnail;
+		
+		//push the object into an entries array
 		entries.push(singleEntry);
 	}
 
